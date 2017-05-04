@@ -15,7 +15,7 @@ namespace GameOfLife.GameOfLife.Rules
             int aliveNeighborsCount = cell.GetNeighborsCount(CellStatus.Alive);
             if (aliveNeighborsCount == 3)
             {
-                cell.Status = CellStatus.Alive;
+                cell.NextStatus = CellStatus.Alive;
             }
         }
     }

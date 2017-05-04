@@ -1,4 +1,5 @@
-﻿using GameOfLife.GameOfLife.Utilities;
+﻿using GameOfLife.GameOfLife.Boards;
+using GameOfLife.GameOfLife.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,8 @@ namespace GameOfLife.GameOfLife.Cells
     public interface ICell
     {
         int GetNeighborsCount(CellStatus SearchCellStatus);
-        void SetNewCellStatus(CellStatus NewCellStatus);
         CellStatus Status { get; set; }
+        CellStatus NextStatus { get; set; }
+        IBoard Board { get; set; }
     }
 }

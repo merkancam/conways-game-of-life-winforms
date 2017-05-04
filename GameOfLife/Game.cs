@@ -21,8 +21,7 @@ namespace GameOfLife
         private int topMargin = 40;
 
         List<Square> squares = new List<Square>();
-        //Board board = new Board(32, 48);
-        Board board = new Board(3, 3);
+        Board board = new Board(32, 48);
         List<IRule> rules = new List<IRule>()
             {
                 new SolitudeRule(),
@@ -41,12 +40,12 @@ namespace GameOfLife
             timer.Enabled = true;
             timer.Stop();
             this.StartPosition = FormStartPosition.CenterScreen;
-            FillWindowsWithSquares(board);
+            DrawBoard(board);
         }
 
 
 
-        public void FillWindowsWithSquares(Board board)
+        public void DrawBoard(Board board)
         {
             for (int r = 0; r < board.Rows; r++)
             {
@@ -80,7 +79,9 @@ namespace GameOfLife
 
         private void bStart_Click(object sender, EventArgs e)
         {
-            timer.Stop();
+            if (timer.Enabled == true)
+                return;
+            timer.Start();
             GameOfLifeManager manager = new GameOfLifeManager(board, rules);
             manager.ImplementRules();
             RefreshBoardView();
@@ -91,6 +92,16 @@ namespace GameOfLife
             timer.Stop();
         }
 
+        private void bClean_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
+            foreach (var cell in board.Cells)
+            {
+                cell.Status = CellStatus.Dead;
+                cell.NextStatus = CellStatus.None;
+            }
+            RefreshBoardView();
+        }
     }
 
 

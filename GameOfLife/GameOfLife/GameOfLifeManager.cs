@@ -1,5 +1,6 @@
 ﻿using GameOfLife.GameOfLife.Boards;
 using GameOfLife.GameOfLife.Rules;
+using GameOfLife.GameOfLife.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace GameOfLife.GameOfLife
 {
     public class GameOfLifeManager
     {
-       
+
         private List<IRule> _rules;
         private Board _board;
 
@@ -33,12 +34,18 @@ namespace GameOfLife.GameOfLife
                 }
             }
 
+            foreach (var cell in _board.Cells)
+            {
+                if (cell.NextStatus != CellStatus.None)
+                    cell.Status = cell.NextStatus;
+            }
+
             return _board;
         }
 
-       
+
     }
 
-    
+
 
 }

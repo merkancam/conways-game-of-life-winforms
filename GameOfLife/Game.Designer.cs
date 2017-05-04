@@ -32,11 +32,12 @@
             this.bStart = new System.Windows.Forms.Button();
             this.bStop = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.bClean = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(23, 12);
+            this.bStart.Location = new System.Drawing.Point(23, 8);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(88, 36);
             this.bStart.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // bStop
             // 
-            this.bStop.Location = new System.Drawing.Point(144, 12);
+            this.bStop.Location = new System.Drawing.Point(144, 8);
             this.bStop.Name = "bStop";
             this.bStop.Size = new System.Drawing.Size(83, 36);
             this.bStop.TabIndex = 1;
@@ -58,11 +59,22 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // bClean
+            // 
+            this.bClean.Location = new System.Drawing.Point(917, 8);
+            this.bClean.Name = "bClean";
+            this.bClean.Size = new System.Drawing.Size(83, 36);
+            this.bClean.TabIndex = 2;
+            this.bClean.Text = "Clean";
+            this.bClean.UseVisualStyleBackColor = true;
+            this.bClean.Click += new System.EventHandler(this.bClean_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 678);
+            this.Controls.Add(this.bClean);
             this.Controls.Add(this.bStop);
             this.Controls.Add(this.bStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -82,6 +94,7 @@
         private System.Windows.Forms.Button bStart;
         private System.Windows.Forms.Button bStop;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button bClean;
     }
 }
 

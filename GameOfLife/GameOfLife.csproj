@@ -56,7 +56,6 @@
     <Compile Include="GameOfLife\Boards\Board.cs" />
     <Compile Include="GameOfLife\Boards\IBoard.cs" />
     <Compile Include="GameOfLife\Cells\Cell.cs" />
-    <Compile Include="GameOfLife\Cells\CellBase.cs" />
     <Compile Include="GameOfLife\Cells\ICell.cs" />
     <Compile Include="GameOfLife\GameOfLifeManager.cs" />
     <Compile Include="GameOfLife\Rules\BornRule.cs" />
